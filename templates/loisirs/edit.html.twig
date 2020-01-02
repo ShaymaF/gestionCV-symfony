@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+    {{ include('loisirs/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('loisirs_index') }}">back to list</a>
+
+    {{ include('loisirs/_delete_form.html.twig') }}
+{% endblock %}

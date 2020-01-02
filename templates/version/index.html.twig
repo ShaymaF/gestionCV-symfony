@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}{{ parent() }}{% endblock %}
+
+{% block content %}
+{% if app.user %}
+<br><br><br><br><br><br>
+<section  class="cv">
+   <div class="container">
+   <div class="row">
+      <div class="main_pricing roomy-100 ">
+         <div class="col-md-12 col-sm-12">
+            <div class="pricing_item">
+               <!-- Formation -->
+               <div class="head_title text-center ">
+                  <br>  
+                  <h2>Les Versions</h2>
+                  <div class="separator_auto"></div>
+
+</div>
+     <div class="pricing_body bg-white p-top-130 p-bottom-60">
+                  <div class="col-md-12">
+                     <div class="service_item">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+               <!--  <th>Propriétaire</th>-->
+                 <th>DateCreation</th>
+                <!--<th>Path</th>-->
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for version in versions %}
+            <tr>
+                <td>{{ version.id }}</td>
+                <td>{{ version.name }}</td>
+         <!--   <td>{{  version.user.username }}</td>        -->
+
+                <td>{{ version.dateCreation ? version.dateCreation|date('Y-m-d') : '' }}</td>
+               <!-- <td>{{ version.path }}</td> -->
+                <td>
+                  <a>     <a href="{{ path('version_edit', {'id': version.user.id, 'idv': version.id}) }}" class="fa fa-eye">  Consulter</a><br>
+                <a href="{{ path('version_download', {'id': version.user.id, 'idv': version.id}) }}" class="fa fa-download">  Download </a><br>
+
+    
+                <form method="post" action="{{ path('version_delete_user', {'id': version.id,'id_user': app.user.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ version.id) }}">
+
+    <button class="btn btn-danger">Delete</button>
+
+</form>
+</a>
+      </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+   </div>
+</div>
+</div> 
+</div>
+</div>
+</div>
+</div>
+</section>
+{% else %}
+<div class="alert alert-danger" role="alert">
+   Vous besoin de connecter avant !!
+</div>
+{% endif %}
+{% endblock %}

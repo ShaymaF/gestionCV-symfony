@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+    {{ include('connaissances/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('connaissances_index') }}">back to list</a>
+
+    {{ include('connaissances/_delete_form.html.twig') }}
+{% endblock %}

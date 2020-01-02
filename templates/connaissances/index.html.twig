@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connaissances index{% endblock %}
+
+{% block body %}
+    <h1>Connaissances index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Technologies</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for connaissance in connaissances %}
+            <tr>
+                <td>{{ connaissance.id }}</td>
+                <td>{{ connaissance.titre }}</td>
+                <td>{{ connaissance.technologies }}</td>
+                <td>
+                    <a href="{{ path('connaissances_show', {'id': connaissance.id}) }}">show</a>
+                    <a href="{{ path('connaissances_edit', {'id': connaissance.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('connaissances_new') }}">Create new</a>
+{% endblock %}

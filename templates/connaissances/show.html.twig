@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connaissances{% endblock %}
+
+{% block body %}
+    <h1>Connaissances</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ connaissance.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ connaissance.titre }}</td>
+            </tr>
+            <tr>
+                <th>Technologies</th>
+                <td>{{ connaissance.technologies }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('connaissances_index') }}">back to list</a>
+
+    <a href="{{ path('connaissances_edit', {'id': connaissance.id}) }}">edit</a>
+
+    {{ include('connaissances/_delete_form.html.twig') }}
+{% endblock %}

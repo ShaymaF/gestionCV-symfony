@@ -1,0 +1,121 @@
+<!--     <img class="bi x0 y0 w0 h0" style=":position:relative; z-index:1;" alt="" src="{{asset('assets/OutDocument/bg1.png')}}"/>
+			   <div style="position:absolute;z-index:10;background:transparent;"></div>
+      -->
+      <!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+      <link rel="stylesheet" href="{{asset('assets/OutDocument/base.min.css')}}"/>
+      <link rel="stylesheet" href="{{asset('assets/OutDocument/fancy.min.css')}}"/>
+      <link rel="stylesheet" href="{{asset('assets/OutDocument/main.css')}}"/>
+      <script src="{{asset('assets/OutDocument/compatibility.min.js')}}"></script>
+      <script src="{{asset('assets/OutDocument/theViewer.min.js')}}"></script>
+      <script>
+         try{
+         theViewer.defaultViewer = new theViewer.Viewer({});
+         }catch(e){}
+      </script>
+      <title></title>
+   </head>
+   <body>
+      <div id="sidebar">
+         <div id="outline"></div>
+      </div>
+      <div id="page-container">
+         <div id="pf1" class="pf w0 h0" data-page-no="1">
+            <div class="pc pc1 w0 h0">
+               <img class="bi x0 y0 w0 h0" alt="" src="{{asset('assets/OutDocument/bg1.png')}}"/>
+			  
+              
+			    <div class="t m0 x1 h1 y35 ff1 fs0 fc0 sc0 ls0 ws0"><br><br>{% for lsloisirs in loisirs %}•<span class="_ _1"> </span><span class="_ _3"></span>{{ lsloisirs.titre }}<br>{% endfor %}</div>
+               <div class="t m0 x1 h2 y4 ff3 fs2 fc1 sc0 ls0 ws0">FORMATIONS</div>
+               <div class="t m0 x2 h2 y5 ff3 fs2 fc1 sc0 ls0 ws0">COMPÉTENCES CLÉS </div>
+               <div class="t m0 x1 h2 y49 ff3 fs2 fc1 sc0 ls0 ws0">LANGUES</div>
+               <div class="t m0 x1 h2 y35 ff3 fs2 fc1 sc0 ls0 ws0">LOISIRS</div>
+               <div class="t m0 x4 h2 y9 ff3 fs2 fc1 sc0 ls0 ws0">A PROPOS DE {{app.user.username}}</div>
+               <div class="c x0 ya w1 h4">
+  
+				  <div class="t m0 x5 h5 yb ff4 fs4 fc2 sc1 ls0 ws0"> {{ competence[0].competenceField}}</div>
+                  <div class="t m0 x6 h5 yd ff4 fs4 fc2 sc1 ls0 ws0">{{ competence[1].competenceField}} </div>
+                  <div class="t m0 x8 h5 yf ff4 fs4 fc2 sc1 ls0 ws0">{{ competence[2].competenceField}} </div>
+                  <div class="t m0 x6 h5 y10 ff4 fs4 fc2 sc1 ls0 ws0">{{ competence[3].competenceField}}  </div>
+                  <div class="t m0 x9 h5 y12 ff4 fs4 fc2 sc1 ls0 ws0">{{ competence[4].competenceField}}  </div>
+                  <div class="t m0 x3 h5 y14 ff4 fs4 fc2 sc1 ls0 ws0">{{ competence[5].competenceField}} </div>
+                  <div class="t m0 xb h5 yf ff4 fs4 fc2 sc1 ls0 ws0">{{ competence[6].competenceField}} </div>
+                  <div class="t m0 xc h5 yd ff4 fs4 fc2 sc1 ls0 ws0">{{ competence[7].competenceField}} </div>
+               </div>
+
+               <div class="t m0 x1 h6 y15 ff2 fs0 fc3 sc0 ls0 ws0">{% for lsFormation in formation %}•<span class="_ _1"> </span><span class="ff3 fs1">{{ lsFormation.datedebut |date('Y')}}-{{ lsFormation.datefin |date('Y')}} <span class="_ _2"></span><span class="fc0"><br>– <span class="ff2">{{ lsFormation.titre }}.<br>{{ lsFormation.Etablissement }}.</span></span></span>
+               <br>{% endfor %}</div>
+               <div class="t m0 xf h7 y1b ff2 fs3 fc0 sc0 ls0 ws0">{% for ls in about %}•<span class="_ _1"> </span><span class="_ _3"></span>{{ ls.text }}<br>{% endfor %}</div>
+<!--•<span class="_ _1"> </span>-->
+               <div class="t m0 x10 h8 y28 ff3 fs1 fc5 sc0 ls0 ws0">Conception</div>
+               <div class="t m0 x11 h8 y29 ff3 fs1 fc5 sc0 ls0 ws0">Développement</div>
+               <div class="t m0 x10 h8 y2a ff3 fs1 fc5 sc0 ls0 ws0">Méthodes</div>
+      <div class="t m0 x16 h8 y37 ff3 fs1 fc5 sc0 ls0 ws0">BDD et cache</div>
+               
+
+               <div class="t m0 x12 h7 y2b ff2 fs3 fc0 sc0 ls0 ws0">{% for lsConn in connaissances %}{% if lsConn.titre=='choice1'%}{{lsConn.technologies}}<br>{% endif %}{% endfor %}</div>
+               <div class="t m0 x12 h7 y38 ff2 fs3 fc0 sc0 ls0 ws0">{% for lsConn in connaissances %}{% if lsConn.titre=='choice2'%}{{lsConn.technologies}}<br>{% endif %}{% endfor %}</div>
+               <div class="t m0 x12 h7 y2f ff2 fs3 fc0 sc0 ls0 ws0">{% for lsConn in connaissances %}{% if lsConn.titre=='choice3'%}{{lsConn.technologies}}<br>{% endif %}{% endfor %}</div>
+               <div class="t m0 x12 h7 y2e ff2 fs3 fc0 sc0 ls0 ws0">{% for lsConn in connaissances %}{% if lsConn.titre=='choice4'%}{{lsConn.technologies}}<br>{% endif %}{% endfor %}</div>
+               <div class="t m0 x12 h7 y49 ff2 fs3 fc0 sc0 ls0 ws0">{% for lsConn in connaissances %}{% if lsConn.titre=='choice5'%}{{lsConn.technologies}}<br>{% endif %}{% endfor %}</div>
+               <div class="t m0 x12 h7 y3c ff2 fs3 fc0 sc0 ls0 ws0">{% for lsConn in connaissances %}{% if lsConn.titre=='choice6'%}{{lsConn.technologies}}<br>{% endif %}{% endfor %}</div>
+              <div class="t m0 x12 h7 y36 ff2 fs3 fc0 sc0 ls0 ws0">{% for lsConn in connaissances %}{% if lsConn.titre=='choice7'%}{{lsConn.technologies}}<br>{% endif %}{% endfor %}</div>
+              <div class="t m0 x13 h7 y2d ff2 fs3 fc0 sc0 ls0 ws0">{% for lsConn in connaissances %}{% if lsConn.titre=='choice8'%}{{lsConn.technologies}}<br>{% endif %}{% endfor %}</div>
+
+  
+               <div class="t m0 x14 h8 y33 ff3 fs1 fc5 sc0 ls0 ws0">Serveurs </div>
+               <div class="t m0 x15 h8 y34 ff3 fs1 fc5 sc0 ls0 ws0">d’application </div>
+               <div class="t m0 x10 h8 y35 ff3 fs1 fc5 sc0 ls0 ws0">Systèmes</div>
+         
+               <div class="t m0 x17 h8 y39 ff3 fs1 fc5 sc0 ls0 ws0">Intégration </div>
+               <div class="t m0 x17 h8 y3a ff3 fs1 fc5 sc0 ls0 ws0">continue et </div>
+               <div class="t m0 x18 h8 y3b ff3 fs1 fc5 sc0 ls0 ws0">versionning</div>
+               <div class="t m0 x12 h7 y3d ff2 fs3 fc0 sc0 ls0 ws0"></div>
+               <div class="t m0 x14 h8 y3e ff3 fs1 fc5 sc0 ls0 ws0">Outils de </div>
+               <div class="t m0 x11 h8 y3f ff3 fs1 fc5 sc0 ls0 ws0">développement</div>
+     
+               <div class="t m0 x1a h9 y42 ff2 fs5 fc0 sc0 ls0 ws0">ContactProxym–AdelNAILI<span class="_ _7"></span>–0635468426</div>
+
+               <div class="t m0 x1 h3 y3c ff2 fs3 fc0 sc0 ls0 ws0">{% for lg in langues %}• {{ lg.langue }} {{ lg.niveau }}/10 <br><br>{% endfor %}</div>
+               <div class="t m0 xe h9 y43 ff2 fs5 fc0 sc0 ls0 ws0"></div>
+
+               <div class="t m0 x1d ha y46 ff3 fs6 fc1 sc0 ls0 ws0">OL</div>
+               <div class="t m0 x1e hb y47 ff2 fs7 fc5 sc0 ls0 ws0">5ansd’expérience</div>
+               <div class="t m0 x1e hc y48 ff3 fs7 fc5 sc0 ls0 ws0">INGÉNIEUR DÉVELOPPEMENT <span class="_ _2"></span>FRONT-END</div>
+            </div>
+            <div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
+         </div>
+
+         <div id="pf2" class="pf w0 h0" data-page-no="2">
+            <div class="pc pc2 w0 h0">
+               <img class="bi x0 y0 w0 h0" alt="" src="{{asset('assets/OutDocument/bg2.png')}}"/>
+              
+               <div class="t m0 x1f hc y4a ff3 fs7 fc6 sc0 ls0 ws0">PARCOURS PROFESSIONNEL</div>
+               <div class="t m0 x20 hd y4b ff2 fs8 fc3 sc0 ls0 ws0">{% for pr in parcours %}post {{ pr.post }}<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>{% endfor %}</div>
+               <div class="t m0 x20 he y4c ff3 fs8 fc1 sc0 ls0 ws0">{% for pr in parcours %}lieu {{ pr.emplacement }}<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>{% endfor %}</div>
+               <div class="t m0 x20 h7 y4d ff2 fs3 fc0 sc0 ls0 ws0">{% for pr in parcours %}des {{ pr.description }}<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>{% endfor %}</div>
+               <div class="t m0 x20 h7 y4f ff1 fs1 fc6 sc0 ls0 ws0">ü<span class="_ _8"> </span><span class="ff2 fs3 fc0">{% for pr in parcours %}Mission {{ pr.mission }}<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>{% endfor %}</span></div>
+               <div class="t m0 x20 h7 y56 ff2 fs3 fc0 sc0 ls0 ws0">{% for pr in parcours %}Environnement Technique {{ pr.technologies }}<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>{% endfor %}</div>
+                         
+               <div class="t m0 x1e hb y73 ff2 fs7 fc5 sc0 ls0 ws0">5ansd’expérience</div>
+               <div class="t m0 x1e hc y74 ff3 fs7 fc5 sc0 ls0 ws0">INGÉNIEUR DÉVELOPPEMENT <span class="_ _2"></span>FRONT-END</div>
+               <div class="t m0 x1d ha y46 ff3 fs6 fc1 sc0 ls0 ws0">OL</div>
+               <div class="t m0 x23 h3 y75 ff3 fs3 fc1 sc0 ls0 ws0"> {% for pr in parcours %}{{ pr.dateDebut |date("M Y")}} à<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>{% endfor %} </div>
+               <div class="t m0 x25 h3 y76 ff3 fs3 fc1 sc0 ls0 ws0">{% for pr in parcours %}{{ pr.datefin |date("M Y")}} <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>{% endfor %} </div>
+          
+     
+                 
+               <div class="t m0 x1a h9 y42 ff2 fs5 fc0 sc0 ls0 ws0">ContactProxym–AdelNAILI<span class="_ _7"></span>–0635468426</div>
+            </div>
+            <div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
+         </div>
+  
+      </div>
+      <div class="loading-indicator">
+      </div>
+   </body>
+</html>

@@ -1,0 +1,21 @@
+knp_snappy:
+
+
+    pdf:
+        enabled:    true
+        binary:     '/usr/local/bin/wkhtmltopdf'
+        options:    
+            page-size: letter
+            margin-left: 0mm
+            margin-right: 0mm
+            margin-top: 0mm
+            margin-bottom: 10mm
+            viewport-size: 1024x768
+           
+            # Recommended to set UTF-8 as default encoding :)
+            encoding: UTF-8
+
+    image:
+        enabled:    true
+        binary:     '/usr/local/bin/wkhtmltoimage'
+        options:    []

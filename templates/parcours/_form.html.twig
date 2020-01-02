@@ -1,0 +1,60 @@
+
+         <br>
+<br>
+<br>
+<br>
+<br><br>
+       
+                 <!--Contact Us Section-->
+            <section id="contact" class="contact bg-mega fix">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_contact roomy-100 text-white">
+                            <div class="col-md-4">
+                                <div class="rage_widget">
+                                    <div class="widget_head">
+                                        <h3 class="text-white">Step 7/7 </h3>
+                                        <div class="separator_small"></div>
+                                    </div>
+                                   <b> Bonjour {{ app.user.username }} - {{ app.user.email }}</b><br><br>
+                                 <p style="text-align: justify;">  
+                                Dans cette étape, vos allez entrer un parcours professionnel en saisissant la poste occupée et l'emplacement de cette éxperience ( le nom de la societé et son emplacement),
+                                 le titre de projet, sa description, les détails de votre mission, les tâches effectuées  et les technologies utilisés ainsi que  la date de début et de fin de cette expérience .
+                                  </p>
+                                                <div class="separator_auto"></div>
+
+                                           <div class="impress_btns m-top-40">
+                    <a href="{{ path('loisirs_new', {'id' : app.user.id }) }}" class="btn btn-primary m-top-20"> << Previous</a>
+
+
+                  </div>     
+                                 
+                                </div>
+                            </div>
+                            <div class="col-md-8 sm-m-top-30">
+                                    <div class="row">
+                                         <div class="form-group text-white">
+                           <div class="form-controle">
+ {{ form_label(form)}}
+
+{{ form_start(form,{'attr':{'class':'text-white'}}) }}
+
+
+{{ form_widget(form,{'attr':{'class':'text-black'}}) }}
+                     
+                     </div>
+                     </div>                      
+                      <button class="btn btn-primary" type="submit">{{ button_label|default('Next >>') }}</button>
+                                      
+
+                                        
+
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div><!--End off row -->
+                </div><!--End off container -->
+            </section><!--End off Contact Section-->
+
+

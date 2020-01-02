@@ -1,0 +1,10 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+ {{ form_label(form)}}
+
+{{ form_start(form,{'attr':{'class':'text-white'}}) }}
+
+
+{{ form_widget(form,{'attr':{'class':'text-black'}}) }}
+
+ <button class="btn btn-primary" type="submit" style="float: center;">{{ button_label|default('Next >>') }}</button>
+

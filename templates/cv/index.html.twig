@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+
+{{parent()}}
+  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block body %}
+{% if app.user %}
+<!--Pricing Section-->
+<section class="row">                
+            <div class="col-md-2 col-sm-2"> </div>
+
+                   <div class="col-md-8 col-sm-8"> 
+                        <div class="impress_btns  ">
+                        <div class="col-md-4 col-sm-4">   <a href="{{ path('cv_download', {'id' : user.id }) }}" class="btn btn-primary m-top-20">export .pdf</a></div>
+                         <div class="col-md-4 col-sm-4">  </div>
+                        </div>
+ </section>
+<section class="pdf">
+
+      <div class="col-md-12">
+         <div class="main_pricing roomy-100">
+            <div class="col-md-1 col-sm-1"> </div>
+            <div class="col-md-10 col-sm-10">
+               <div class=" pricing_item">
+                  <div class="head_title text-center p-top-12">
+                     <br>  
+                     {% if user.username =='RH'%}    
+                     <h2>CV</h2>
+                     <div class="separator_auto"></div>
+                     {% else %}
+                     <h2>{{user.username}}</h2>
+                     <div class="separator_auto"></div>
+                     <p>
+                        {{user.post}} <br>
+                        {{ "now"|date("Y")- user.dateEmbauche |date(" Y")}} ans d’expérience
+                     </p>
+                     {% endif %}
+                     <!--   <div class="impress_btns m-top-30">
+                        <a href="" class="btn btn-primary m-top-20">export .pdf</a>
+                        <a href="" class="btn text-white bg-mega m-top-20">SHOW CV</a>
+                        <a href="" class="btn btn-primary  m-top-20">export .doc</a>
+                        
+                        </div>-->
+                  </div>
+                  <div class="pricing_body bg-white p-top-150 p-bottom-60">
+                     <div class="service_item col-md-12">
+                        <div class="col-md-6">
+                           <h6 class="m-top-30">About</h6>
+                           <div class="separator_small"></div>
+                           {% for a in about %}
+                           <p>             {{a.text}}
+                           </p>
+                           {% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                           <h6 class="m-top-30">Compétences</h6>
+                           <div class="separator_small"></div>
+                           {% for c in competence %}
+                           {{c.competenceField}}
+                           {% endfor %}
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="service_item col-md-12">
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-6">
+                           <hr>
+                        </div>
+                     </div>
+                     <div class="service_item col-md-12">
+                        <div class="col-md-6">
+                           <div class="service_item">
+                              <h6 class="m-top-30">Langues</h6>
+                              <div class="separator_small"></div>
+                              {% for lg in langues %}
+                              <a><b> langue : </b></a>{{lg.langue}} <br>
+                              <a><b> niveau : </b></a> {{ lg.niveau }} / 10   
+                              <br>
+                              {% endfor %}
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="service_item">
+                              <h6 class="m-top-30">Loisirs</h6>
+                              <div class="separator_small"></div>
+                              {% for p in loisirs %}
+                              {{p.titre}}
+                              <br>
+                              {% endfor %}
+                           </div>
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="col-md-12">
+                        <div class="col-md-6">
+                           <div class="service_item">
+                              <h6 class="m-top-30">Connaissances</h6>
+                              <div class="separator_small"></div>
+                              {% for cn in connaissances %}
+                              {% if cn.titre=='choice1' %} <a><b>Conception : </b></a>{{cn.technologies}}{% endif %}
+                              {% if cn.titre=='choice2' %}  <a><b>BDD et Cache : </b></a>{{cn.technologies}}{% endif %}
+                              {% if cn.titre=='choice3' %} <a><b>Développement : </b></a>{{cn.technologies}} {% endif %}
+                              {% if cn.titre=='choice4' %}  <a><b>Méthodologies : </b></a>{{cn.technologies}}{% endif %}
+                              {% if cn.titre=='choice5' %}  <a><b>Outils de développement : </b></a>{{cn.technologies}}{% endif %}
+                              {% if cn.titre=='choice6' %}  <a><b>Intégratrion continue : </b></a>{{cn.technologies}}{% endif %}
+                              {% if cn.titre=='choice7' %}  <a><b>Serveurs d application : </b></a>{{cn.technologies}}{% endif %}
+                              {% if cn.titre=='choice8' %}  <a><b>Systémes : </b></a>{{cn.technologies}}{% endif %}
+                              <br>
+                              {% endfor %}
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="service_item">
+                              <h6 class="m-top-30">Formation</h6>
+                              <div class="separator_small"></div>
+                              {% for f in formation %}
+                              <b>  {{f.datedebut|date("d |m |y")}} -  {{f.datedebut|date("d |m |y")}}  </b> <br>
+                              <a> <b>  Dipôlme :</a> </b>{{f.titre}}<br>
+                              <a> <b>  Etablissement :</a> </b>     {{f.Etablissement}}  
+                              <br><br>
+                              {% endfor %}
+                           </div>
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="col-md-12">
+                        <div class="service_item">
+                           <h6 class="m-top-30">Parcours Professionnel</h6>
+                           <div class="separator_small"></div>
+                           {% for pr in parcours %}
+                           <a> <b>  {{pr.post }} - {{ pr.emplacement}}   </b></a>
+                           <b>  {{pr.dateDebut|date("m | y")}} -  {{pr.datefin|date(" m | y")}}  </b>  <br>
+                           <p><b> Description Projet: </b>{{ pr.description}} </p>
+                           <p><b> Mission : </b>{{ pr.mission}} </p>
+                           <br>
+                           {% endfor %}
+                           <hr>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- End off col-md-4 -->
+         <div class="col-md-1 col-sm-1"> </div>
+      </div>
+   </div>
+   <!--End off row-->
+   <!--End off container -->
+   {% block javascripts %}
+{{parent()}}
+
+{% endblock %}
+</section>
+<!--End off Pricing section -->
+{% else %}
+<div class="alert alert-danger" role="alert">
+   Vous besoin de connecter avant !!
+</div>
+{% endif %}
+
+
+
+{% endblock %}

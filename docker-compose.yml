@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+   ldap:
+        image: osixia/openldap
+        hostname: ldap-service
+        host: localhost
+        ports:
+          - "389:389"
+        environment:
+           LDAP_DOMAIN: proxym-it.com
+           LDAP_ORGANIZATION: proxym-it
+           LDAP_ADMIN_PASSWORD: admin

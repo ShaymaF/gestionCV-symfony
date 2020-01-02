@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}{{ parent() }}{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<!--Contact Us Section-->
+<section id="contact" class="contact bg-mega fix">  
+
+   <div class="container"> 
+      <div class="row">
+         <div class="main_contact roomy-100 text-white">
+            <div class="col-md-4">
+               <div class="rage_widget">
+                  <div class="widget_head">
+                  
+                     <h3 class="text-white">Step 1/7</h3>
+                     <div class="separator_small"></div>
+
+                  </div>
+                  <p style="text-align:justify;">
+               <b> Bonjour {{ app.user.username }} - {{ app.user.email }}</b><br><br>
+
+                  Dans cette étape, vous allez vous présenter,
+
+                   vous devez mentionner votre poste actuelle,
+                    vos expériences, le domaine sur lequel vous travaillez,
+                     vos compétences principales, votre parcours professionnel etc.
+ 
+                  </p>
+                                                                  <div class="separator_auto"></div>
+
+              
+               </div>
+            </div>
+            <div class="col-md-8">
+               <div class="form-group text-white">
+                  <div class="form-controle">
+
+                     {{ include('about/_form.html.twig') }}
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--End off row -->
+   </div><br><br><br><br><br><br><br><br><br><br>
+   <!--End off container -->
+</section>
+<!--End off Contact Section-->
+{% endblock %}

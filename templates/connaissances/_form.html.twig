@@ -1,0 +1,59 @@
+
+         <br>
+<br>
+<br>
+<br>
+<br><br>
+       
+                 <!--Contact Us Section-->
+            <section id="contact" class="contact bg-mega fix">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_contact roomy-100 text-white">
+                            <div class="col-md-4">
+                                <div class="rage_widget">
+                                    <div class="widget_head">
+                                        <h3 class="text-white">Step 4/7</h3>
+                                        <div class="separator_small"></div>
+                                    </div>
+                                    <p style="text-align:justify;">
+                                    <b> Bonjour {{ app.user.username }} - {{ app.user.email }}</b><br><br>
+                                    Dans cette étape, vous allez citer vos connaissances dans les differents domaines présentés, 
+en méthodes de conception (exemples: uml, merise..), languages de développement(exemples: Angular, js..), 
+outils de développement(exemple:  visual studio code..) etc.                                    </p>
+                                                                                        <div class="separator_auto"></div>
+
+                <div class="impress_btns m-top-40">
+                    <a href="{{ path('competence_new', {'id' : app.user.id }) }}" class="btn btn-primary m-top-20"> << Previous</a>
+
+ </div>        
+                                 
+                                </div>
+                            </div>
+                            <div class="col-md-8 sm-m-top-30">
+                                    <div class="row">
+                                         <div class="form-group text-white">
+                           <div class="form-controle">
+ {{ form_label(form)}}
+
+{{ form_start(form,{'attr':{'class':'text-white'}}) }}
+
+
+{{ form_widget(form,{'attr':{'class':'text-black'}}) }}
+                     
+                     </div>
+ <button class="btn btn-primary" type="submit">{{ button_label|default('Next >>') }}</button>
+                                      
+
+                                        
+
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div><!--End off row -->
+                </div><!--End off container -->
+          <br><br><br><br><br><br>
+            </section><!--End off Contact Section-->
+
+

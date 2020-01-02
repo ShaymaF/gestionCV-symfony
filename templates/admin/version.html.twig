@@ -1,0 +1,226 @@
+{% extends 'admin.html.twig' %}
+{% block stylesheets %}
+{{parent()}}
+{% endblock %}
+{% block body %}
+{{parent()}}
+{% endblock %}
+{% block table %}
+
+   
+   
+   <div class="data-table-area mg-b-15">
+       <div class="container-fluid"><br>
+           <div class="row">
+               <div class="col-lg-12">
+                   <div class="sparkline13-list shadow-reset">
+                     
+                       <div class="">
+ <section  class="cv">
+   <div class="container" >
+     <div class="row">
+                           <div class="col-lg-6">
+                               <div class="breadcome-heading">
+                               </div>
+                           </div>
+                           <div class="col-lg-6">
+                               <ul class="breadcome-menu">
+                                   <li><a href="{{ path('version_Adminlist', {'id' : user.id }) }}">List Version</a> <span class="bread-slash">/</span>
+                                   </li>
+                                   <li><span class="bread-blod">{{user.username}}</span>
+                                   </li>
+                               </ul>
+                           </div>
+                       </div>
+      <div class="row">
+         <div class="main_pricing roomy-100">
+            <div class="col-md-12 col-sm-12">
+               <div class="pricing_item ">
+                  <div class="head_title text-center p-top-12">
+                     <br>  
+                     {% if user.post=='RH'%}  
+                     <h2>CV</h2>
+                     <div class="separator_auto"></div>
+                     {% else %}
+                     <h2>{{user.username}}</h2>
+                     <div class="separator_auto"></div>
+                     <p>
+                        {{user.post}} <br>
+                        {{ "now"|date("Y")- user.dateEmbauche |date(" Y")}} ans d’expérience
+                     </p>
+                     {% endif %}
+                     <!--   <div class="impress_btns m-top-30">
+                        <a href="" class="btn btn-primary m-top-20">export .pdf</a>
+                        <a href="" class="btn text-white bg-mega m-top-20">SHOW CV</a>
+                        <a href="" class="btn btn-primary  m-top-20">export .doc</a>
+                        
+                        </div>-->
+                  </div>
+                    <div class="pricing_body bg-white p-top-150 p-bottom-60">
+                     <div class="col-md-12">
+                        <div class="service_item">
+                           <h6 class="m-top-30">About
+                              <a class=""  href="javascript: hideabout(); "
+                                 >(+add)</a>
+                           </h6>
+                           <div class="separator_small"></div>
+                          
+                           <br>
+                           {% for a in about %}
+                           <p>             {{a.text}}
+                              <a href="{{ path('about_delete', {'id' : a.id ,'id_user': user.id}) }}" class="btn btn-danger delete-article" data-id="{{ a.id }}"style="background-color: #c90404; float: right;">-</a>
+                           </p>
+                           <hr>
+                           {% endfor %}
+                        </div>
+                     </div>
+                     <div class="col-md-12">
+                        <div class="service_item">
+                           <h6 class="m-top-30">Compétences
+                              <a class=""  href="javascript: hideComp(); "
+                                 >(+add)</a>
+                           </h6>
+                           <div class="separator_small"></div>
+                         
+                           <br>
+                           {% for c in competence %}
+                           <p> {{c.competenceField}}
+                              <a href="{{ path('competence_delete', {'id' : c.id ,'id_user': user.id}) }}" class="btn btn-danger delete-article" data-id="{{ c.id }}"style="background-color: #c90404; float: right;">-</a>
+                           </p>
+                           <hr>
+                           {% endfor %}
+                        </div>
+                     </div>
+                     <div class="col-md-12">
+                        <div class="service_item">
+                           <h6 class="m-top-30">Connaissances
+                              <a class=""  href="javascript: hideConn(); "
+                                 >(+add)</a>
+                           </h6>
+                           <div class="separator_small"></div>
+                          
+                           <br>
+                           {% for cn in connaissances %}
+                           {% if cn.titre=='choice1' %} <a><b>Conception : </b></a>{{cn.technologies}}{% endif %}
+                           {% if cn.titre=='choice2' %}  <a><b>BDD et Cache : </b></a>{{cn.technologies}}{% endif %}
+                           {% if cn.titre=='choice3' %} <a><b>Développement : </b></a>{{cn.technologies}} {% endif %}
+                           {% if cn.titre=='choice4' %}  <a><b>Méthodologies : </b></a>{{cn.technologies}}{% endif %}
+                           {% if cn.titre=='choice5' %}  <a><b>Outils de développement : </b></a>{{cn.technologies}}{% endif %}
+                           {% if cn.titre=='choice6' %}  <a><b>Intégratrion continue : </b></a>{{cn.technologies}}{% endif %}
+                           {% if cn.titre=='choice7' %}  <a><b>Serveurs d application : </b></a>{{cn.technologies}}{% endif %}
+                           {% if cn.titre=='choice8' %}  <a><b>Systémes : </b></a>{{cn.technologies}}{% endif %}
+                           <a href="{{ path('connaissances_delete', {'id' : cn.id ,'id_user': user.id}) }}" class="btn btn-danger delete-article" data-id="{{ cn.id }}"style="background-color: #c90404; float: right;">-</a>
+                           <!-- <a href="{{ path('connaissances_edit', {'id' : cn.id ,'id_user': user.id}) }}" class="btn btn-danger delete-article" data-id="{{ cn.id }}" style=" float: right; background-color:#24c6e3">+</a>-->
+                           <hr>
+                           {% endfor %}
+                        </div>
+                     </div>
+                     <div class="col-md-12">
+                        <div class="service_item">
+                           <h6 class="m-top-30">Formation
+                              <a class=""  href="javascript: hideForm(); "
+                                 >(+add)</a>
+                           </h6>
+                           <div class="separator_small"></div>
+                          
+                           <br>
+                           {% for f in formation %}
+                           <b>  {{f.datedebut|date("d |m |y")}} -  {{f.datedebut|date("d |m |y")}}  </b> <br>
+                           <a> <b>  Dipôlme :</a> </b>{{f.titre}}<br>
+                           <a> <b>  Etablissement :</a> </b>     {{f.Etablissement}}  
+                           <a href="{{ path('formation_delete', {'id' : f.id ,'id_user': user.id}) }}" class="btn btn-danger delete-article" data-id="{{ f.id }}"style="background-color: #c90404; float: right;">-</a>
+                           <br>
+                           <hr>
+                           {% endfor %}
+                        </div>
+                     </div>
+                     <div class="col-md-12">
+                        <div class="service_item">
+                           <h6 class="m-top-30">langues
+                              <a class=""  href="javascript: hideLang(); "
+                                 >(+add)</a>
+                           </h6>
+                           <div class="separator_small"></div>
+                          
+                           <br>
+                           {% for lg in langues %}
+                           <div class="col-md-3">
+                              <a><b> langue : </b></a>{{lg.langue}} 
+                           </div>
+                           <div class="col-md-6">
+                              <a><b> niveau : </b></a> {{ lg.niveau }} / 10   
+                           </div>
+                           <a href="{{ path('langues_delete', {'id' : lg.id ,'id_user': user.id}) }}" class="btn btn-danger delete-article" data-id="{{ lg.id }}"style="background-color: #c90404; float: right;">-</a>
+                           <br>
+                           <hr>
+                           {% endfor %}
+                        </div>
+                     </div>
+                     <div class="col-md-12">
+                        <div class="service_item">
+                           <h6 class="m-top-30">loisirs
+                              <a class=""  href="javascript: hideLoisir(); "
+                                 >(+add)</a>
+                           </h6>
+                           <div class="separator_small"></div>
+                        
+                           <br>
+                           {% for p in loisirs %}
+                           {{p.titre}}
+                           <a href="{{ path('loisirs_delete', {'id' : p.id ,'id_user': user.id}) }}" class="btn btn-danger delete-article" data-id="{{ p.id }}"style="background-color: #c90404; float: right;">-</a>
+                           <br>
+                           <hr>
+                           {% endfor %}
+                        </div>
+                     </div>
+                     <div class="col-md-12">
+                        <div class="service_item">
+                           <h6 class="m-top-30">Parcours Professionnel
+                              <a class=""  href="javascript: hideParcour(); "
+                                 >(+add)</a>
+                           </h6>
+                           <div class="separator_small"></div>
+                          
+                           <br>
+                           {% for pr in parcours %}
+                           <a> <b>  {{pr.post }} - {{ pr.emplacement}}   </b></a>
+                           <b>  {{pr.dateDebut|date("m | y")}} -  {{pr.datefin|date(" m | y")}}  </b>  <br>
+                           <p><b> Description Projet: </b>{{ pr.description}} </p>
+                           <p><b> Mission : </b>{{ pr.mission}} </p>
+                           <a href="{{ path('parcours_delete', {'id' : pr.id ,'id_user': user.id}) }}" class="btn btn-danger delete-article" data-id="{{ pr.id }}"style="background-color: #c90404; float: right;">-</a>
+                           <br>
+                           <hr>
+                           {% endfor %}
+                           <div class=" row">
+                              {% if user.post=='RH'%}  
+                              {% else %}
+                              <!--   <div class="impress_btns head_title text-center ">
+                                 <a href="{{ path('cv_edit', {'id' : user.id }) }}" class="btn text-white bg-mega m-top-20">save version</a>
+                                 </div>
+                                 {% endif %}
+                                 </div> -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- End off col-md-4 -->
+   </div>
+   </div>
+   <!--End off row-->
+   </div>
+   <!--End off container -->
+</section>
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% endblock %}

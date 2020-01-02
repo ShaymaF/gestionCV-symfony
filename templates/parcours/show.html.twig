@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Parcours{% endblock %}
+
+{% block body %}
+    <h1>Parcours</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ parcour.id }}</td>
+            </tr>
+            <tr>
+                <th>Post</th>
+                <td>{{ parcour.post }}</td>
+            </tr>
+            <tr>
+                <th>Emplacement</th>
+                <td>{{ parcour.emplacement }}</td>
+            </tr>
+            <tr>
+                <th>Mission</th>
+                <td>{{ parcour.mission }}</td>
+            </tr>
+            <tr>
+                <th>Technologies</th>
+                <td>{{ parcour.technologies }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ parcour.description }}</td>
+            </tr>
+            <tr>
+                <th>DateDebut</th>
+                <td>{{ parcour.dateDebut ? parcour.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{{ parcour.datefin ? parcour.datefin|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Projet</th>
+                <td>{{ parcour.projet }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('parcours_index') }}">back to list</a>
+
+    <a href="{{ path('parcours_edit', {'id': parcour.id}) }}">edit</a>
+
+    {{ include('parcours/_delete_form.html.twig') }}
+{% endblock %}

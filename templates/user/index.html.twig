@@ -1,0 +1,196 @@
+{% extends 'admin.html.twig' %}
+{% block stylesheets %}
+{{parent()}}
+{% endblock %}
+{% block body %}
+{{parent()}}
+{% endblock %}
+{% block table %}
+ <div class="breadcome-area mg-b-30 small-dn">
+       <div class="container-fluid">
+           <div class="row">
+               <div class="col-lg-12">
+                   <div class="breadcome-list shadow-reset">
+                       <div class="row">
+                           <div class="col-lg-6">
+                               <div class="breadcome-heading">
+                                   
+                               </div>
+                           </div>
+                           <div class="col-lg-6">
+                               <ul class="breadcome-menu">
+                                   <li><a href="{{ path('user_index')}}">Accueil</a> <span class="bread-slash">/</span>
+                                   </li>
+                                   <li><span class="bread-blod">Table Users</span>
+                                   </li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   
+   
+   
+   <div class="data-table-area mg-b-15">
+       <div class="container-fluid">
+           <div class="row">
+               <div class="col-lg-12">
+                   <div class="sparkline13-list shadow-reset">
+                     
+                       <div class="sparkline13-graph">
+                           <div class="datatable-dashv1-list custom-datatable-overright">
+                               <div id="toolbar">
+                                   <select class="form-control" style="background-color: #fff; color:#919191;">
+                                       <option value="">Export Basic</option>
+                                       <option value="all">Export All</option>
+                                       <option value="selected">Export Selected</option>
+                                   </select>
+                               </div>
+   
+                               <table id="table" data-toggle="table" data-search="true" data-show-columns="true"  data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                   <thead>
+                           <tr>
+                              <th>ID</th>
+                              <th>Username</th>
+                              <th>Email</th>
+                              <th>Enabled</th>
+                              <th>LastLogin</th>
+                              <th>Roles</th>
+                              <th>Dn</th>
+                              <th>Post</th>
+                              <th>DateEmbauche</th>
+                              <th>actions</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {% for user in users %}
+                           <tr>
+                              <td>{{ user.id }}</td>
+                              <td>{{ user.Username }}</td>
+                              <td>{{ user.email }}</td>
+                              <td>{{ user.enabled ? 'Yes' : 'No' }}</td>
+                              <td>{{ user.lastLogin ? user.lastLogin|date('Y-m-d H:i:s') : '' }}</td>
+                              <td>{{ user.roles ? user.roles|join(', ') : '' }}</td>
+                              <td>{{ user.dn }}</td>
+                              <td>{{ user.post }}</td>
+                              <td>{{ user.dateEmbauche ? user.dateEmbauche|date('Y-m-d') : '' }}</td>
+                              <td>
+                                 <a href="{{ path('user_show', {'id': user.id}) }}">show  <i class="fa fa-eye"></i></a><br>
+                                 <a href="{{ path('user_edit', {'id': user.id}) }}">edit  <i class="fa fa-edit"></i></a><br>
+                                 <a href="{{ path('cv_Adminedit', {'id': user.id}) }}">CV</a><br>
+                                 <a href="{{ path('version_Adminlist', {'id': user.id}) }}">version</a>
+
+
+                              </td>
+                           </tr>
+                           {% else %}
+                           <tr>
+                              <td colspan="16">no records found</td>
+                           </tr>
+                           {% endfor %}
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<a href="{{ path('user_new') }}">Create new</a>
+<!--      
+   <div class="breadcome-area mg-b-30 small-dn">
+       <div class="container-fluid">
+           <div class="row">
+               <div class="col-lg-12">
+                   <div class="breadcome-list shadow-reset">
+                       <div class="row">
+                           <div class="col-lg-6">
+                               <div class="breadcome-heading">
+                                   <form role="search" class="">
+   <input type="text" placeholder="Search..." class="form-control">
+   <a href=""><i class="fa fa-search"></i></a>
+   </form>
+                               </div>
+                           </div>
+                           <div class="col-lg-6">
+                               <ul class="breadcome-menu">
+                                   <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                   </li>
+                                   <li><span class="bread-blod">Data Table</span>
+                                   </li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   
+   
+   
+   <div class="data-table-area mg-b-15">
+       <div class="container-fluid">
+           <div class="row">
+               <div class="col-lg-12">
+                   <div class="sparkline13-list shadow-reset">
+                     
+                       <div class="sparkline13-graph">
+                           <div class="datatable-dashv1-list custom-datatable-overright">
+                               <div id="toolbar">
+                                   <select class="form-control" style="background-color: #fff; color:#919191;">
+                                       <option value="">Export Basic</option>
+                                       <option value="all">Export All</option>
+                                       <option value="selected">Export Selected</option>
+                                   </select>
+                               </div>
+   
+                               <table id="table" data-toggle="table" data-search="true" data-show-columns="true"  data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                   <thead>
+                                       <tr>
+                                           <th data-field="state" data-checkbox="true"></th>
+                                           <th data-field="id">ID</th>
+                                           <th data-field="name" >Project</th>
+                                           <th data-field="email" data-editable="true">Email</th>
+                                           <th data-field="phone" data-editable="true">Phone</th>
+                                           <th data-field="company" data-editable="true">Company</th>
+                                           <th data-field="complete">Completed</th>
+                                           <th data-field="task" data-editable="true">Task</th>
+                                           <th data-field="date" data-editable="true">Date</th>
+                                           <th data-field="price" data-editable="true">Price</th>
+                                           <th data-field="action">Action</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody>
+                                       <tr>
+                                           <td></td>
+                                           <td>1</td>
+                                           <td>Web Development</td>
+                                           <td>admin@uttara.com</td>
+                                           <td>+8801962067309</td>
+                                           <td>Aber Ltd.</td>
+                                           <td class="datatable-ct"><span class="pie">1/6</span>
+                                           </td>
+                                           <td>10%</td>
+                                           <td>Jul 14, 2018</td>
+                                           <td>$5455</td>
+                                           <td class="datatable-ct"><i class="fa fa-check"></i>
+                                           </td>
+                                       </tr>
+                                      
+                                   </tbody>
+                               </table>
+   
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   -->
+{% endblock %}
