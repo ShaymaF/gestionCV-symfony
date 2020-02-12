@@ -35,6 +35,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
@@ -3567,8 +3568,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -3839,8 +3840,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
@@ -8337,28 +8338,28 @@
         },
         {
             "name": "symfony/var-exporter",
-            "version": "v4.3.2",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-exporter.git",
-                "reference": "9dee83031dcf6dcb53bb7ec1c51de085329bf5cb"
+                "reference": "1a76a943f2af334da13bc9f33f49392fa530eec9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/9dee83031dcf6dcb53bb7ec1c51de085329bf5cb",
-                "reference": "9dee83031dcf6dcb53bb7ec1c51de085329bf5cb",
+                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/1a76a943f2af334da13bc9f33f49392fa530eec9",
+                "reference": "1a76a943f2af334da13bc9f33f49392fa530eec9",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1.3"
             },
             "require-dev": {
-                "symfony/var-dumper": "^4.1.1"
+                "symfony/var-dumper": "^4.1.1|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.3-dev"
+                    "dev-master": "4.4-dev"
                 }
             },
             "autoload": {
@@ -8393,7 +8394,7 @@
                 "instantiate",
                 "serialize"
             ],
-            "time": "2019-06-22T08:39:44+00:00"
+            "time": "2020-01-04T13:00:46+00:00"
         },
         {
             "name": "symfony/web-link",
@@ -8791,6 +8792,7 @@
                 "ZendFramework",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-authentication",
             "time": "2019-05-14T18:06:07+00:00"
         },
         {
@@ -8844,6 +8846,7 @@
                 "barcode",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-barcode",
             "time": "2017-12-11T15:30:02+00:00"
         },
         {
@@ -8927,6 +8930,7 @@
                 "psr-6",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-cache",
             "time": "2018-05-01T21:58:00+00:00"
         },
         {
@@ -8985,6 +8989,7 @@
                 "captcha",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-captcha",
             "time": "2019-06-18T09:32:52+00:00"
         },
         {
@@ -9038,6 +9043,7 @@
                 "code",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-code",
             "time": "2018-08-13T20:36:59+00:00"
         },
         {
@@ -9094,6 +9100,7 @@
                 "config",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-config",
             "time": "2016-02-04T23:01:10+00:00"
         },
         {
@@ -9147,6 +9154,7 @@
                 "console",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-console",
             "time": "2019-02-04T19:48:22+00:00"
         },
         {
@@ -9199,6 +9207,7 @@
                 "crypt",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-crypt",
             "time": "2019-05-14T20:19:53+00:00"
         },
         {
@@ -9257,6 +9266,7 @@
                 "db",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-db",
             "time": "2019-02-25T11:37:45+00:00"
         },
         {
@@ -9306,6 +9316,7 @@
                 "debug",
                 "zf"
             ],
+            "abandoned": true,
             "time": "2018-04-30T20:10:31+00:00"
         },
         {
@@ -9353,6 +9364,7 @@
                 "di",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-di",
             "time": "2016-04-25T20:58:11+00:00"
         },
         {
@@ -9417,6 +9429,7 @@
                 "psr",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-diactoros",
             "time": "2018-09-05T19:29:37+00:00"
         },
         {
@@ -9462,6 +9475,7 @@
                 "dom",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-dom",
             "time": "2019-06-18T10:36:49+00:00"
         },
         {
@@ -9507,6 +9521,7 @@
                 "escaper",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-escaper",
             "time": "2018-04-25T15:48:53+00:00"
         },
         {
@@ -9561,6 +9576,7 @@
                 "events",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-eventmanager",
             "time": "2018-04-25T15:33:34+00:00"
         },
         {
@@ -9624,6 +9640,7 @@
                 "feed",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-feed",
             "time": "2019-03-05T20:08:49+00:00"
         },
         {
@@ -9681,6 +9698,7 @@
                 "file",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-file",
             "time": "2019-02-06T16:53:31+00:00"
         },
         {
@@ -9746,6 +9764,7 @@
                 "filter",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-filter",
             "time": "2018-12-17T16:00:04+00:00"
         },
         {
@@ -9824,6 +9843,7 @@
                 "form",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-form",
             "time": "2019-02-26T18:13:31+00:00"
         },
         {
@@ -9879,6 +9899,7 @@
                 "zend",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-http",
             "time": "2019-02-19T18:58:14+00:00"
         },
         {
@@ -9942,6 +9963,7 @@
                 "hydrator",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-hydrator",
             "time": "2018-11-19T19:16:10+00:00"
         },
         {
@@ -10010,6 +10032,7 @@
                 "i18n",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-i18n",
             "time": "2018-05-16T16:39:13+00:00"
         },
         {
@@ -10056,6 +10079,7 @@
                 "translations",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-i18n-resources",
             "time": "2019-06-25T01:21:12+00:00"
         },
         {
@@ -10113,6 +10137,7 @@
                 "inputfilter",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-inputfilter",
             "time": "2019-01-30T16:58:51+00:00"
         },
         {
@@ -10163,6 +10188,7 @@
                 "json",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-json",
             "time": "2019-06-18T10:54:52+00:00"
         },
         {
@@ -10213,6 +10239,7 @@
                 "server",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-json-server",
             "time": "2018-04-25T22:16:03+00:00"
         },
         {
@@ -10266,6 +10293,7 @@
                 "ldap",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-ldap",
             "time": "2018-07-05T05:05:12+00:00"
         },
         {
@@ -10311,6 +10339,7 @@
                 "loader",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-loader",
             "time": "2018-04-30T15:20:54+00:00"
         },
         {
@@ -10382,6 +10411,7 @@
                 "logging",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-log",
             "time": "2018-04-09T21:59:51+00:00"
         },
         {
@@ -10444,6 +10474,7 @@
                 "mail",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-mail",
             "time": "2018-06-07T13:37:07+00:00"
         },
         {
@@ -10495,6 +10526,7 @@
                 "math",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-math",
             "time": "2018-12-04T15:45:09+00:00"
         },
         {
@@ -10544,6 +10576,7 @@
                 "memory",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-memory",
             "time": "2018-04-30T15:45:17+00:00"
         },
         {
@@ -10595,6 +10628,7 @@
                 "mime",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-mime",
             "time": "2018-05-14T19:02:50+00:00"
         },
         {
@@ -10655,6 +10689,7 @@
                 "modulemanager",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-modulemanager",
             "time": "2017-12-02T06:11:18+00:00"
         },
         {
@@ -10727,6 +10762,7 @@
                 "mvc",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-mvc",
             "time": "2017-11-24T06:32:07+00:00"
         },
         {
@@ -10793,6 +10829,7 @@
                 "mvc",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-mvc-console",
             "time": "2018-04-30T19:10:26+00:00"
         },
         {
@@ -10835,6 +10872,7 @@
                 "mvc",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-mvc-form",
             "time": "2016-06-07T18:34:07+00:00"
         },
         {
@@ -10898,6 +10936,7 @@
                 "mvc",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-mvc-i18n",
             "time": "2018-05-01T15:48:40+00:00"
         },
         {
@@ -10956,6 +10995,7 @@
                 "mvc",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-mvc-plugin-fileprg",
             "time": "2018-04-30T20:02:13+00:00"
         },
         {
@@ -11012,6 +11052,7 @@
                 "mvc",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-mvc-plugin-flashmessenger",
             "time": "2018-04-30T18:47:56+00:00"
         },
         {
@@ -11067,6 +11108,7 @@
                 "mvc",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-mvc-plugin-identity",
             "time": "2018-04-30T19:50:13+00:00"
         },
         {
@@ -11121,6 +11163,7 @@
                 "mvc",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-mvc-plugin-prg",
             "time": "2018-04-30T19:54:38+00:00"
         },
         {
@@ -11169,6 +11212,7 @@
                 "plugins",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-mvc-plugins",
             "time": "2016-06-02T18:41:26+00:00"
         },
         {
@@ -11237,6 +11281,7 @@
                 "navigation",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-navigation",
             "time": "2018-04-25T20:19:50+00:00"
         },
         {
@@ -11302,6 +11347,7 @@
                 "paginator",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-paginator",
             "time": "2018-01-30T15:52:44+00:00"
         },
         {
@@ -11351,6 +11397,7 @@
                 "acl",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-permissions-acl",
             "time": "2019-06-25T08:09:22+00:00"
         },
         {
@@ -11396,6 +11443,7 @@
                 "rbac",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-permissions-rbac",
             "time": "2018-02-01T09:55:50+00:00"
         },
         {
@@ -11448,6 +11496,7 @@
                 "progressbar",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-progressbar",
             "time": "2018-04-30T19:15:33+00:00"
         },
         {
@@ -11497,6 +11546,7 @@
                 "psr",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-psr7bridge",
             "time": "2016-05-10T21:44:39+00:00"
         },
         {
@@ -11559,6 +11609,7 @@
                 "zend",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-router",
             "time": "2019-02-26T20:24:12+00:00"
         },
         {
@@ -11616,6 +11667,7 @@
                 "serializer",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-serializer",
             "time": "2018-05-14T18:45:18+00:00"
         },
         {
@@ -11663,6 +11715,7 @@
                 "server",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-server",
             "time": "2018-04-30T22:21:28+00:00"
         },
         {
@@ -11731,6 +11784,7 @@
                 "servicemanager",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-servicemanager",
             "time": "2018-12-22T06:05:09+00:00"
         },
         {
@@ -11786,6 +11840,7 @@
                 "di",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-servicemanager-di",
             "time": "2018-04-30T19:19:56+00:00"
         },
         {
@@ -11853,6 +11908,7 @@
                 "session",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-session",
             "time": "2018-02-22T16:33:54+00:00"
         },
         {
@@ -11905,6 +11961,7 @@
                 "soap",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-soap",
             "time": "2016-04-21T16:06:27+00:00"
         },
         {
@@ -11951,6 +12008,7 @@
                 "stdlib",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-stdlib",
             "time": "2018-08-28T21:34:05+00:00"
         },
         {
@@ -12004,6 +12062,7 @@
                 "middleware",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-stratigility",
             "time": "2017-01-23T22:59:03+00:00"
         },
         {
@@ -12055,6 +12114,7 @@
                 "tag",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-tag",
             "time": "2019-04-30T21:23:21+00:00"
         },
         {
@@ -12126,6 +12186,7 @@
                 "test",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-test",
             "time": "2019-06-11T19:33:38+00:00"
         },
         {
@@ -12174,6 +12235,7 @@
                 "text",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-text",
             "time": "2018-04-30T14:55:10+00:00"
         },
         {
@@ -12221,6 +12283,7 @@
                 "uri",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-uri",
             "time": "2019-02-27T21:39:04+00:00"
         },
         {
@@ -12294,6 +12357,7 @@
                 "validator",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-validator",
             "time": "2019-01-30T14:26:10+00:00"
         },
         {
@@ -12381,6 +12445,7 @@
                 "view",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-view",
             "time": "2019-02-19T17:40:15+00:00"
         },
         {
@@ -12429,6 +12494,7 @@
                 "xml",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-xml2json",
             "time": "2018-04-30T13:32:01+00:00"
         },
         {
@@ -12482,6 +12548,7 @@
                 "xmlrpc",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-xmlrpc",
             "time": "2018-05-14T19:17:17+00:00"
         },
         {
@@ -12583,6 +12650,7 @@
                 "zf2",
                 "zf3"
             ],
+            "abandoned": "laminas/laminas-mvc-skeleton",
             "time": "2016-06-28T12:44:22+00:00"
         },
         {
@@ -12629,6 +12697,7 @@
                 "xml",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-xml",
             "time": "2019-01-22T19:42:14+00:00"
         }
     ],
